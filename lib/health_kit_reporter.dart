@@ -639,10 +639,8 @@ class HealthKitReporter {
       'identifier': identifier,
     };
     arguments.addAll(predicate.map);
-    final result =
-        await _methodChannel.invokeMethod('deleteObjects', arguments);
-    final Map<String, dynamic> map = jsonDecode(result);
-    return map;
+    // Results already returns as a map, does not need casting
+    return await _methodChannel.invokeMethod('deleteObjects', arguments);
   }
 
   /// Saves [Sample] in [HealthKit].
