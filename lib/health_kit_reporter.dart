@@ -633,7 +633,7 @@ class HealthKitReporter {
 
   /// Deletes all objects related to [identifier] with [predicate].
   ///
-  static Future<Map<String, dynamic>> deleteObjects(
+  static Future<dynamic> deleteObjects(
       String identifier, Predicate predicate) async {
     final arguments = <String, dynamic>{
       'identifier': identifier,
